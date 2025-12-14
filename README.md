@@ -236,15 +236,33 @@ git clone https://github.com/Spagett1/PineFlash/
 cd PineFlash 
 ```
 
-4. Download blisp which is needed for pinecil V2 support, alternatively compile it if you are not on a 64 bit computer. [Instructions]("https://github.com/pine64/blisp")
+4. Download blisp which is needed for pinecil V2 support. See [blisp releases](https://github.com/pine64/blisp/releases) for other architectures or to compile from source.
 
-In the following instructions replace `platform` with your operating system (`linux` or `macos`)
+**macOS (Intel & Apple Silicon):**
 ```
-curl -L "https://github.com/pine64/blisp/releases/download/v0.0.3/blisp-platform64-v0.0.3.zip" -o "blisp-platform64-v0.0.3.zip"
-unzip "blisp-platform-v0.0.3.zip"
+curl -L "https://github.com/pine64/blisp/releases/download/v0.0.5/blisp-apple-universal.zip" -o "blisp-apple-universal.zip"
+unzip blisp-apple-universal.zip
 sudo mv ./blisp /usr/local/bin/blisp
+sudo chmod +x /usr/local/bin/blisp
 ```
-:dart: Important: Don't forget to add blisp to your path 
+
+**Linux x86_64:**
+```
+curl -L "https://github.com/pine64/blisp/releases/download/v0.0.5/blisp-linux-x86_64.zip" -o "blisp-linux-x86_64.zip"
+unzip blisp-linux-x86_64.zip
+sudo mv ./blisp /usr/local/bin/blisp
+sudo chmod +x /usr/local/bin/blisp
+```
+
+**Linux aarch64 (ARM64):**
+```
+curl -L "https://github.com/pine64/blisp/releases/download/v0.0.5/blisp-linux-aarch64.zip" -o "blisp-linux-aarch64.zip"
+unzip blisp-linux-aarch64.zip
+sudo mv ./blisp /usr/local/bin/blisp
+sudo chmod +x /usr/local/bin/blisp
+```
+
+:dart: Important: Make sure blisp is in your PATH 
 
 5. Then build pineflash itself
 ```
